@@ -15,7 +15,7 @@ To recognize and categorize different mouse gestures using simple logistic regre
 This list is definitely extendable simply by adding more training samples and let the model learn them.
 
 ## Demo
-To start the demo, start the server first by running
+To start the demo, start the http server first by running
 
 ```
 $python server.py
