@@ -36,6 +36,6 @@ while true ; do java -jar Demo.jar ; done
 Register the drawing by holding down left ctrl, draw a pattern with the mouse, and release left ctrl. The server will try to recognize the pattern and a small popup will appear if a symbol is recognized.
 
 ## Libraries used
-[JNativeHook](https://github.com/kwhat/jnativehook/) (for the demo only)
-[scikitlearn](http://scikit-learn.org/)
-[Argo JSON](http://argo.sourceforge.net/)
+1. [JNativeHook](https://github.com/kwhat/jnativehook/) (for the demo only)
+2. [scikitlearn](http://scikit-learn.org/)
+3. [Argo JSON](http://argo.sourceforge.net/)
