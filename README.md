@@ -1,4 +1,4 @@
-# MouseGestureRecognition
+# Mouse Gesture Recognition
 
 ## Recognize different mouse gestures using simple logistic regression
 To recognize and categorize different mouse gestures using simple logistic regression. The model is trained with very high accuracy (98%). I had some doubt about overfitting too but it works very well in practice.
