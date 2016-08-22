@@ -2,12 +2,15 @@
 
 MIN_LENGTH = 35
 
-out_dir = '/home/vda/test/generated'
+out_dir = '/home/vda/MouseGestureRecognition/generated'
 test_dir = '/media/vda/C95D42734B09AB7D/test'
 
 model_file = 'model.pickle'
 
-LABEL_LIST = ['horizontal', 'vertical', 'u', 'alpha', 'circle_left', 'hat', 'z', 'derivative', 'six', 'triangle', 'random', 'greater_than', 'square_root']
+LABEL_LIST = ['alpha', 'circle_left', 'derivative', 'gamma', 'greater_than',
+				'hat', 'horizontal', 'less_than', 'N', 'random', 'six', 'square',
+				'square_root', 'tilda',
+				 'triangle', 'u', 'vertical', 'z']
 WHITE_LIST = [] # ['hat']
-BLACK_LIST = ['six', 'circle_left', 'square_root']
+BLACK_LIST = ['derivative']
 LABELS = { value : index for index, value in enumerate(LABEL_LIST) }

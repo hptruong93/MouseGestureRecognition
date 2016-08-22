@@ -18,6 +18,7 @@ X = [] # Training set
 y = [] # Label set
 
 def time_it(message, action):
+    print "{0}...".format(message)
     now = time.time()
     value = action()
     print "{0} took {1} seconds".format(message, time.time() - now)
@@ -49,13 +50,15 @@ def traverse_labels(args, label_path):
             continue
 
         count = 0
-        for file_name in os.listdir(inspecting_dir):
+        data_row_files = os.listdir(inspecting_dir)
+        data_row_length = len(data_row_files)
+        for file_name in data_row_files:
             count += 1
             full_file_name = os.path.join(inspecting_dir, file_name)
             should_keep = random.random() < args.percent
 
             process_data_row(label_name, full_file_name)
-            print "\rCounted %s" % count,
+            print "\r==> %s% (%s/%s)" % (100 * float(count) / data_row_length, count, data_row_length)
             sys.stdout.flush()
 
         print ""

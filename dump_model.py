@@ -25,8 +25,8 @@ def test_manual_classification(model):
     print c.shape
 
     for i in xrange(1000000):
-        # x = [float(r) / 100 for r in reversed(list(range(70)))]
-        x = [random.random() for i in xrange(70)]
+        # x = [float(r) / 100 for r in reversed(list(range(MIN_LENGTH * 2)))]
+        x = [random.random() for i in xrange(MIN_LENGTH * 2)]
 
         true_value = model.predict(x)[0]
 
@@ -42,14 +42,14 @@ def dump_model(model, out_dir = 'model_dump'):
     if not os.path.isdir(out_dir):
         os.mkdir(out_dir)
 
-    with open(os.path.join(out_dir, 'intercept'), 'w') as f:
+    with open(os.path.join(out_dir, 'intercepts'), 'w') as f:
         joiner = ''
         for floaat in model.intercept_:
             f.write(joiner)
             joiner = '\n'
             f.write(binary(floaat))
 
-    with open(os.path.join(out_dir, 'coefficient'), 'w') as f:
+    with open(os.path.join(out_dir, 'coefficients'), 'w') as f:
         row_joiner = ''
         for row in model.coef_:
             f.write(row_joiner)
@@ -73,4 +73,4 @@ if __name__ == "__main__":
     with open('model.pickle', 'r') as f:
         model = pickle.load(f)
 
-    test_manual_classification(model)
+    dump_model(model)
